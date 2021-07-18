@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers\admin;
 
+use App\Basket;
 use App\Category;
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
@@ -9,6 +10,8 @@ use App\Http\Controllers\Controller;
 class CategoryController extends Controller
 {
     public function category(){
+
+
         $dataCategorys = Category::get();
         return view('admin.category', compact('dataCategorys'));
     }
@@ -18,7 +21,7 @@ class CategoryController extends Controller
         return view('admin.category_form', compact('dataCategorys'));
     }
 
-    public function savecategory(Request $request)
+    public function saveCategory(Request $request)
     {
 
         $request->file('image')->store('unloads', 'public');
@@ -47,4 +50,5 @@ class CategoryController extends Controller
         Category::where('id', $id)->delete();
         return back();
     }
+
 }

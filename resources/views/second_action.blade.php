@@ -28,17 +28,23 @@
     <div class="brand-bg">
         <div class="container">
             <div class="row">
-                @foreach($dataActions as $dataAction)
+                @foreach($dataSecondActions as $dataSecondAction)
                     <div class="col-xl-4 col-lg-4 col-md-4 col-sm-6 margin">
                         <div class="brand_box">
-                            <img src="{{ asset('storage/'. $dataAction->image) }}" alt="img" />
-                            <span><h2>{{ $dataAction->title }}</h2></span>
-                            <h3><strong class="red">{{ $dataAction->description }}</strong></h3>
+                            <img src="{{ asset('storage/'. $dataSecondAction->image) }}" alt="img" />
+                            <span><h3>{{ $dataSecondAction->name }}</h3></span>
+                            <span><h3>{{ $dataSecondAction->description }}</h3></span>
+                            <img src="{{ asset('storage/'. $dataSecondAction->secondimage) }}" alt="img" />
+                            <span><h3>{{ $dataSecondAction->secondname }}</h3></span>
+                            <h2><strong class="red">{{ $dataSecondAction->price }}</strong></h2>
+                            <div class="col-md-12">
+                                <a class="read-more">Купити</a>
+                            </div>
                         </div>
                     </div>
                 @endforeach
                 <div class="col-md-12">
-                    <a class="read-more">See More</a>
+                    <a class="read-more">Дивитися більше</a>
                 </div>
             </div>
         </div>
@@ -47,36 +53,4 @@
 
 
 @include('second_header')
-
-<script src='{{ asset('js/jquery.min.js') }}'></script>
-<script src='{{ asset('js/popper.min.js') }}'></script>
-<script src='{{ asset('js/bootstrap.bundle.min.js') }}'></script>
-<script src='{{ asset('js/jquery-3.0.0.min.js') }}'></script>
-<script src='{{ asset('js/plugin.js') }}'></script>
-<!-- sidebar -->
-<script src='{{ asset('js/jquery.mCustomScrollbar.concat.min.js') }}'></script>
-<script src='{{ asset('js/custom.js') }}'></script>
-<!-- javascript -->
-<script src='{{ asset('js/owl.carousel.js') }}'></script>
-<script src='{{ asset('https:cdnjs.cloudflare.com/ajax/libs/fancybox/2.1.5/jquery.fancybox.min.js') }}'></script>
-<script>
-    $(document).ready(function() {
-        $(".fancybox").fancybox({
-            openEffect: "none",
-            closeEffect: "none"
-        });
-
-        $(".zoom").hover(function() {
-
-            $(this).addClass('transition');
-        }, function() {
-
-            $(this).removeClass('transition');
-        });
-    });
-</script>
-</body>
-
-</html>
-
 

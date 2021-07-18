@@ -178,7 +178,7 @@ $(function () {
     labels: [
       'Instore Sales',
       'Download Sales',
-      'Mail-Order Sales'
+      'ContactsMail-Order Sales'
     ],
     datasets: [
       {

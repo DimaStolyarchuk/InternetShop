@@ -4,7 +4,7 @@
 <body class="main-layout">
 <!-- loader  -->
 <div class="loader_bg">
-    <div class="loader"><img src="images/loading.gif" alt="#" /></div>
+    <div class="loader"><img src='{{ asset('images/loading.gif') }}' alt="#" /></div>
 </div>
 <!-- end loader -->
 <!-- header -->
@@ -35,13 +35,13 @@
                             <h3><strong class="">{{ $dataProduct->product }}</strong></h3>
                             <span><h2>{{ $dataProduct->price }}</h2></span>
                             <div class="col-md-12">
-                                <a class="read-more">Купити</a>
+                                <a class="read-more" href="{{ route('basket', ['id' => $dataProducts->id]) }}">Купити</a>
                             </div>
                         </div>
                     </div>
                 @endforeach
                 <div class="col-md-12">
-                    <a class="read-more">See More</a>
+                    <a class="read-more">Дививтися більше</a>
                 </div>
             </div>
         </div>
@@ -50,34 +50,3 @@
 
 
 @include('second_header')
-
-<script src='{{ asset('js/jquery.min.js') }}'></script>
-<script src='{{ asset('js/popper.min.js') }}'></script>
-<script src='{{ asset('js/bootstrap.bundle.min.js') }}'></script>
-<script src='{{ asset('js/jquery-3.0.0.min.js') }}'></script>
-<script src='{{ asset('js/plugin.js') }}'></script>
-<!-- sidebar -->
-<script src='{{ asset('js/jquery.mCustomScrollbar.concat.min.js') }}'></script>
-<script src='{{ asset('js/custom.js') }}'></script>
-<!-- javascript -->
-<script src='{{ asset('js/owl.carousel.js') }}'></script>
-<script src='{{ asset('https:cdnjs.cloudflare.com/ajax/libs/fancybox/2.1.5/jquery.fancybox.min.js') }}'></script>
-<script>
-    $(document).ready(function() {
-        $(".fancybox").fancybox({
-            openEffect: "none",
-            closeEffect: "none"
-        });
-
-        $(".zoom").hover(function() {
-
-            $(this).addClass('transition');
-        }, function() {
-
-            $(this).removeClass('transition');
-        });
-    });
-</script>
-</body>
-
-</html>

@@ -18,7 +18,7 @@ class BrandController extends Controller
         return view('admin.brand_form', compact('dataBrands'));
     }
 
-    public function savebrand(Request $request)
+    public function saveBrand(Request $request)
     {
         $request->file('image')->store('unloads', 'public');
 

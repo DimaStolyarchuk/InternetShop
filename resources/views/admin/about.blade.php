@@ -26,11 +26,11 @@
                                     <td>{{$dataAbout->action}}</td>
                                     <td>{{$dataAbout->priority}}</td>
                                     <td>
-                                        <a href="{{ route('edit_home', ['id' => $dataAbout->id]) }}">
+                                        <a href="{{ route('edit_about', ['id' => $dataAbout->id]) }}">
                                             edit
                                         </a>
                                         /
-                                        <a href="{{ route('delete_home', ['id' => $dataAbout->id]) }}">
+                                        <a href="{{ route('delete_about', ['id' => $dataAbout->id]) }}">
                                             delete
                                         </a>
                                     </td>

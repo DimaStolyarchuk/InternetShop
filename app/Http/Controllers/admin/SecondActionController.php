@@ -2,32 +2,36 @@
 
 namespace App\Http\Controllers\admin;
 
+use App\SecondAction;
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
 
 class SecondActionController extends Controller
 {
     public function secondaction(){
-        $dataSecondActions = Action::get();
+        $dataSecondActions = SecondAction::get();
         return view('admin.second_action', compact('dataSecondActions'));
     }
 
     public function secondaction_form(){
         $dataSecondActions = [];
-        return view('admin.secondaction_form', compact('dataSecondActions'));
+        return view('admin.second_action_form', compact('dataSecondActions'));
     }
 
-    public function savesecondaction(Request $request)
+    public function saveSecondAction(Request $request)
     {
-        $request->file('image')->store('unloads', 'public');
+        $request->file('image', 'secondimage')->store('unloads', 'public');
 
         $dataSecondActions = $request->all();
-        Action::updateOrCreate([
+        SecondAction::updateOrCreate([
             'id' => $dataSecondActions['id'],
         ],[
             'image' => $request->file('image')->getClientOriginalName(),
-            'title' => $dataSecondActions['title'],
+            'secondimage' => $request->file('secondimage')->getClientOriginalName(),
+            'name' => $dataSecondActions['name'],
+            'secondname' => $dataSecondActions['secondname'],
             'description' => $dataSecondActions['description'],
+            'price' => $dataSecondActions['price'],
             'action' => $dataSecondActions['action'],
             'priority' => $dataSecondActions['priority'],
 
@@ -36,13 +40,13 @@ class SecondActionController extends Controller
     }
     public function edit_secondaction($id)
     {
-        $dataSecondActions = Action::where('id', $id)->first();
+        $dataSecondActions = SecondAction::where('id', $id)->first();
         return view('admin.edit_secondaction', compact('dataSecondActions'));
     }
 
     public function delete_secondaction($id)
     {
-        Action::where('id', $id)->delete();
+        SecondAction::where('id', $id)->delete();
         return back();
     }
 }

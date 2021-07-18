@@ -18,7 +18,7 @@ class AboutController extends Controller
         return view('admin.about_form', compact('dataAbouts'));
     }
 
-    public function saveabout(Request $request)
+    public function saveAbout(Request $request)
     {
         $request->file('image')->store('unloads', 'public');
 
@@ -38,7 +38,7 @@ class AboutController extends Controller
     public function edit_about($id)
     {
         $dataAbouts = About::where('id', $id)->first();
-        return view('admin.edit_home', compact('dataHomes'));
+        return view('admin.edit_home', compact('dataAbouts'));
     }
 
     public function delete_about($id)

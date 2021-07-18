@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers\admin;
 
+use App\Basket;
 use App\Category;
 use App\Http\Controllers\Controller;
 use App\Info;
@@ -11,6 +12,7 @@ use Illuminate\Http\Request;
 class ProductController extends Controller
 {
     public function product(){
+
         $dataProducts = Product::get();
         return view('admin.product', compact('dataProducts'));
     }
@@ -21,7 +23,7 @@ class ProductController extends Controller
         return view('admin.product_form', compact('dataCategorys'));
     }
 
-    public function saveproduct(Request $request)
+    public function saveProduct(Request $request)
     {
         $request->file('image')->store('unloads', 'public');
 
@@ -50,4 +52,5 @@ class ProductController extends Controller
         Product::where('id', $id)->delete();
         return back();
     }
+
 }

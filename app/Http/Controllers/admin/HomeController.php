@@ -19,7 +19,7 @@ class HomeController extends Controller
         return view('admin.home_form', compact('dataHomes'));
     }
 
-    public function savehome(Request $request)
+    public function saveHome(Request $request)
     {
         $request->file('image')->store('unloads', 'public');
 

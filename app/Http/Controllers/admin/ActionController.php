@@ -18,7 +18,7 @@ class ActionController extends Controller
         return view('admin.action_form', compact('dataActions'));
     }
 
-    public function saveaction(Request $request)
+    public function saveAction(Request $request)
     {
         $request->file('image')->store('unloads', 'public');
 

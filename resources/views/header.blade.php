@@ -13,7 +13,7 @@
                         </div>
                     </div>
                 </div>
-                <div class="col-xl-9 col-lg-9 col-md-9 col-sm-9">
+                <div class="col-xl-12 col-lg-5 col-md-5 col-sm-5">
                     <div class="menu-area">
                         <div class="limit-box">
                             <nav class="main-menu">
@@ -21,8 +21,10 @@
                                     <li class="active"> <a href="/">Головна сторинка</a> </li>
                                     <li> <a href="about">Про нас</a> </li>
                                     <li> <a href="brand">Бренд</a> </li>
-                                    <li> <a href="specials">Корзина</a> </li>
+                                    <li> <a href="basket">Корзина</a> </li>
                                     <li> <a href="contact">Контакти</a> </li>
+                                    <li> <a href="registration">Реєстрація</a></li>
+                                    <li> <a href="entry">Вхід</a> </li>
 {{--                                    <li class="last">--}}
 {{--                                        <a href="#"><img src="images/search_icon.png" alt="icon" /></a>--}}
 {{--                                    </li>--}}

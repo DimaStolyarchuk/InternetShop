@@ -6,6 +6,7 @@ use Illuminate\Database\Eloquent\Model;
 
 class SecondAction extends Model
 {
-    protected $fillable = ['image', 'title','description', 'action', 'priority'];
+    protected $table = 'second_action';
+    protected $fillable = ['image', 'secondimage','name', 'secondname', 'description', 'price', 'action', 'priority'];
     protected $guarded = [];
 }
