@@ -13,15 +13,15 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/home', 'IndexController@index')->name('home');
+Auth::routes();
 
 Route::get('/', 'PageController@home')->name('home');
 Route::get('/about', 'PageController@about')->name('about');
 Route::get('/brand', 'PageController@brand')->name('brand');
 Route::get('/basket', 'PageController@basket')->name('basket');
 Route::get('/contact', 'PageController@contact')->name('contact');
-Route::get('/registration', 'PageController@registration')->name('registration');
-Route::post('/save_registration', 'PageController@saveRegistration')->name('save_registration');
+//Route::get('/registration', 'PageController@registration')->name('registration');
+//Route::post('/save_registration', 'PageController@saveRegistration')->name('save_registration');
 Route::get('/entry', 'PageController@entry')->name('entry');
 Route::get('/login', 'PageController@login')->name('login');
 Route::get('/action', 'PageController@action')->name('action');
@@ -81,6 +81,9 @@ Route::post('/save_comment', 'Admin\CommentsController@saveСomment')->name('sav
 Route::get('/comment_edit/{id}', 'Admin\CommentsController@edit_comment')->name('edit_comment');
 Route::get('/comment_delete/{id}', 'Admin\CommentsController@delete_comment')->name('delete_comment');
 
-Auth::routes();
 
-Route::get('/home', 'HomeController@index')->name('home');
+Route::get('/register', 'Auth\RegisterController@__construct')->name('register');
+Route::get('/validator', 'Auth\RegisterController@validator')->name('validator');
+Route::post('/create', 'Auth\RegisterController@create')->name('create');
+Route::get('/registration', 'Auth\RegisterController@registration')->name('registration');
+

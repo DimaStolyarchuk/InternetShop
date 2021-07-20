@@ -16,6 +16,7 @@ use App\Product;
 use App\Registration;
 use App\SecondAction;
 use App\Specials;
+use App\User;
 use Illuminate\Http\Request;
 
 
@@ -49,18 +50,18 @@ class PageController extends Controller
 
     public function registration()
     {
-        $dataRegistrations = Registration::get();
+        $dataRegistrations = User::get();
         return view('registration',compact('dataRegistrations'));
     }
-    public function saveRegistration(Request $request)
-    {
-        $dataRegistrations = $request->all();
-        Registration::create([
-            'email' => $dataRegistrations['email'],
-            'password' => $dataRegistrations['password'],
-        ]);
-        return back();
-    }
+//    public function saveRegistration(Request $request)
+//    {
+//        $dataRegistrations = $request->all();
+//        Registration::create([
+//            'email' => $dataRegistrations['email'],
+//            'password' => $dataRegistrations['password'],
+//        ]);
+//        return back();
+//    }
 
     public function entry()
     {

@@ -9,6 +9,7 @@ use Illuminate\Foundation\Auth\RegistersUsers;
 use Illuminate\Support\Facades\Hash;
 use Illuminate\Support\Facades\Validator;
 
+
 class RegisterController extends Controller
 {
     /*
@@ -21,7 +22,11 @@ class RegisterController extends Controller
     | provide this functionality without requiring any additional code.
     |
     */
-
+    public function registration()
+    {
+        $dataRegistrations = User::get();
+        return view('registration',compact('dataRegistrations'));
+    }
     use RegistersUsers;
 
     /**
