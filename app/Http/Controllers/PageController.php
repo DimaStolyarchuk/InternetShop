@@ -11,13 +11,12 @@ use App\Comments;
 use App\Contact;
 use App\Entry;
 use App\Home;
-use App\Login;
 use App\Product;
-use App\Registration;
 use App\SecondAction;
 use App\Specials;
 use App\User;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Auth;
 
 
 class PageController extends Controller
@@ -48,21 +47,6 @@ class PageController extends Controller
         return view('contact',compact('dataContacts'));
     }
 
-    public function registration()
-    {
-        $dataRegistrations = User::get();
-        return view('registration',compact('dataRegistrations'));
-    }
-//    public function saveRegistration(Request $request)
-//    {
-//        $dataRegistrations = $request->all();
-//        Registration::create([
-//            'email' => $dataRegistrations['email'],
-//            'password' => $dataRegistrations['password'],
-//        ]);
-//        return back();
-//    }
-
     public function entry()
     {
         $dataEntry = Entry::get();
@@ -85,16 +69,36 @@ class PageController extends Controller
         return view('category',compact('dataProducts'));
     }
 
-    public function login(){
-
-        $dataLogins = Registration::get();
-        return view('login', compact('dataLogins'));
-    }
-
     public function basket(request $request)
     {
-        $idProducts = $request->all();
-        return view('basket',compact( 'idProducts'));
+        if (Auth::check()) {
+            $user = Auth::user();
+        }
+        if ($request->get('id'))
+        {
+        }
+        $idUsers = \Auth::user()->id;
+
+        $roles = $user->products()->orderBy('id')->get();
+
+
+
+        return view('basket',compact(  'idUsers', 'roles'));
     }
+
+    public function saveBasket($id)
+    {
+        $users = Auth::user();
+
+            $users->products()->attach($id);
+
+        return back();
+    }
+
+
+
+
+
+
 
 }

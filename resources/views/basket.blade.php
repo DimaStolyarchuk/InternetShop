@@ -22,30 +22,29 @@
     </div>
 </div>
 
-<!-- about -->
-@foreach($idProducts as $idProduct)
+@foreach($roles as $role)
     <div class="about">
         <div class="container">
             <div class="row">
                 <div class="col-xl-5 col-lg-5 col-md-5 co-sm-l2">
                     <div class="about_img">
-                        <figure><img src="{{ asset('storage/'. $idProduct->image, ['id' => $idProduct->id]) }}" alt="img" /></figure>
+                        {{ $role->id }} <figure><img src="{{ asset('storage/'. $role->image)}}" alt="img" /></figure>
                     </div>
                 </div>
                 <div class="col-xl-7 col-lg-7 col-md-7 co-sm-l2">
                     <div class="about_box">
-                        <span>{{ $dataAbout->title }}</span>
-                        <p>{{ $dataAbout->description }} </p>
+                        <h2>{{ $role->product }}<h2>
+                        <h1>{{ $role->price }}</h1>
 
                     </div>
                 </div>
             </div>
         </div>
     </div>
+    </div>
 @endforeach
-<!-- end about -->
 
-<!-- footer -->
+
 @include('second_header')
 
 

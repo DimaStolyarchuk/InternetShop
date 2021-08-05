@@ -28,7 +28,7 @@
     <div class="container">
         <div class="row">
             <div class="col-md-12">
-                <form class="main_form" method="post" action="{{ route('save_registration') }}">
+                <form class="main_form" method="post" action="{{ route('login') }}">
                     {{ csrf_field() }}
                     <div class="form-group row">
                         <div class="col-xl-6 col-lg-6 col-md-6 col-sm-6">

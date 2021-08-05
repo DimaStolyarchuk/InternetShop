@@ -35,7 +35,7 @@
                             <h3><strong class="">{{ $dataProduct->product }}</strong></h3>
                             <span><h2>{{ $dataProduct->price }}</h2></span>
                             <div class="col-md-12">
-                                <a class="read-more" href="{{ route('basket', ['id' => $dataProducts->id]) }}">Купити</a>
+                                <a class="read-more" href="{{ route('save_basket', ['id' => $dataProduct->id]) }}">Купити</a>
                             </div>
                         </div>
                     </div>

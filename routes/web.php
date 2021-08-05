@@ -13,20 +13,18 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Auth::routes();
-
 Route::get('/', 'PageController@home')->name('home');
 Route::get('/about', 'PageController@about')->name('about');
 Route::get('/brand', 'PageController@brand')->name('brand');
-Route::get('/basket', 'PageController@basket')->name('basket');
+Route::get('/basket/', 'PageController@basket')->name('basket');
+Route::get('/save_basket/{id}', 'PageController@saveBasket')->name('save_basket');
 Route::get('/contact', 'PageController@contact')->name('contact');
-//Route::get('/registration', 'PageController@registration')->name('registration');
-//Route::post('/save_registration', 'PageController@saveRegistration')->name('save_registration');
 Route::get('/entry', 'PageController@entry')->name('entry');
-Route::get('/login', 'PageController@login')->name('login');
 Route::get('/action', 'PageController@action')->name('action');
 Route::get('/second_action', 'PageController@second_action')->name('second_action');
 Route::get('/category/{id}', 'PageController@category')->name('category');
+
+
 
 Route::get('/admin_home', 'Admin\HomeController@home')->name('admin_home');
 Route::get('/home_form', 'Admin\HomeController@home_form')->name('home_form');
@@ -82,8 +80,10 @@ Route::get('/comment_edit/{id}', 'Admin\CommentsController@edit_comment')->name(
 Route::get('/comment_delete/{id}', 'Admin\CommentsController@delete_comment')->name('delete_comment');
 
 
-Route::get('/register', 'Auth\RegisterController@__construct')->name('register');
-Route::get('/validator', 'Auth\RegisterController@validator')->name('validator');
-Route::post('/create', 'Auth\RegisterController@create')->name('create');
+
+Auth::routes();
+
+Route::get('/home', 'HomeController@index')->name('home');
 Route::get('/registration', 'Auth\RegisterController@registration')->name('registration');
+
 

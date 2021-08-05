@@ -45,7 +45,7 @@
 {{--                        </div>--}}
 {{--                    </div>--}}
 {{--                </form>--}}
-                <form method="POST" action="{{ route('create') }}">
+                <form method="POST" action="{{ route('register') }}">
                     @csrf
 
                     <div class="form-group row">

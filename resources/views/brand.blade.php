@@ -35,7 +35,7 @@
                             <h3><strong class="">{{ $dataBrand->title }}</strong></h3>
                             <span><h2>{{ $dataBrand->description }}</h2></span>
                         <div class="col-md-12">
-                            <a class="read-more">Купити</a>
+                            <a class="read-more" href="{{ route('save_basket', ['id' => $dataBrand->id]) }}">Купити</a>
                         </div>
                     </div>
                 </div>
