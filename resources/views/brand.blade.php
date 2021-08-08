@@ -2,14 +2,13 @@
 <!-- body -->
 
 <body class="main-layout">
-<!-- loader  -->
+
 <div class="loader_bg">
     <div class="loader"><img src="images/loading.gif" alt="#" /></div>
 </div>
-<!-- end loader -->
-<!-- header -->
+
 @include('header')
-<!-- end header -->
+
 <div class="brand_color">
     <div class="container">
         <div class="row">
@@ -21,7 +20,6 @@
         </div>
     </div>
 </div>
-<!-- brand -->
 <div class="brand">
     <div class="container">
     </div>
@@ -40,9 +38,9 @@
                     </div>
                 </div>
                 @endforeach
-                <div class="col-md-12">
-                    <a class="read-more">See More</a>
-                </div>
+{{--                <div class="col-md-12">--}}
+{{--                    <a class="read-more">Побачити більше</a>--}}
+{{--                </div>--}}
             </div>
         </div>
     </div>

@@ -1,13 +1,10 @@
 @extends('layout')
-<!-- body -->
 
 <body class="main-layout ">
-<!-- loader  -->
 <div class="loader_bg">
     <div class="loader"><img src="images/loading.gif" alt="#" /></div>
 </div>
-<!-- end loader -->
-<!-- header -->
+
 @include('header')
 <section class="slider_section">
     <div id="myCarousel" class="carousel slide banner-main" data-ride="carousel">
@@ -52,7 +49,6 @@
     </div>
 </section>
 
-
 <div class="brand">
     <div class="container">
         <div class="row">
@@ -72,22 +68,18 @@
                         <img src="{{ asset('storage/'. $dataCategory->image) }}" alt="img" />
                         <h3 class="entry-title"><a rel="bookmark">{{ $dataCategory->name }}</a></h3>
                             <h1><a class="red" href="{{ route('category', ['id' => $dataCategory->id]) }}" rel="bookmark">{{ $dataCategory->description }}</a></h1>
-
-{{--                       <h1><a class="red" href="{{ route('product', ['id' => $dataCategorys->id]) }}" rel="bookmark">{{ $dataHome->description }}</a></h1>--}}
                     </div>
                 </div>
                 @endforeach
 
-                <div class="col-md-12">
-                    <a class="read-more">See More</a>
-                </div>
+{{--                <div class="col-md-12">--}}
+{{--                    <a class="read-more">Побачити більше</a>--}}
+{{--                </div>--}}
             </div>
         </div>
     </div>
 </div>
 
-<!-- end brand -->
-<!-- clients -->
 <div class="clients">
     <div class="container">
         <div class="row">
@@ -116,7 +108,7 @@
                             <div class="full center"></div>
                             <div class="full testimonial_cont text_align_center cross_layout">
                                 <div class="cross_inner">
-                                    <h3>Due markes{{ $dataComment->name }}<br><strong class="ornage_color">{{ $dataComment->title }}</strong></h3>
+                                    <h3>{{ $dataComment->name }}<br><strong class="ornage_color">{{ $dataComment->title }}</strong></h3>
                                     <p>{{ $dataComment->comment }}</p>
                                 </div>
                             </div>
@@ -128,143 +120,3 @@
     </div>
 </div>
 @include('second_header')
-
-
-
-
-
-{{--<div class="clients_red">--}}
-{{--    <div class="container">--}}
-{{--        <div id="testimonial_slider" class="carousel slide" data-ride="carousel">--}}
-{{--            <!-- Indicators -->--}}
-{{--            @foreach($dataComments as $dataComment)--}}
-{{--                <ul class="carousel-indicators">--}}
-{{--                    <li data-target="#testimonial_slider" data-slide-to="0" class="active" {{ $loop->index }}></li>--}}
-{{--                </ul>--}}
-{{--            @endforeach--}}
-
-{{--        <!-- The slideshow -->--}}
-{{--            @foreach($dataComments as $dataComment)--}}
-{{--            <div class="carousel-inner">--}}
-{{--                <div class="carousel-item">--}}
-{{--                    <div class="testomonial_section">--}}
-{{--                        <div class="full center">--}}
-{{--                        </div>--}}
-{{--                        <div class="full testimonial_cont text_align_center cross_layout">--}}
-{{--                            <div class="cross_inner">--}}
-{{--                                <h3>{{ $dataComment->name }}<br><strong class="ornage_color">{{ $dataComment->title }}</strong></h3>--}}
-{{--                                <p>{{ $dataComment->comment }}</i>--}}
-{{--                                </p>--}}
-{{--                            </div>--}}
-{{--                        </div>--}}
-{{--                    </div>--}}
-{{--                </div>--}}
-{{--                @endforeach--}}
-{{--                <div class="carousel-item active">--}}
-
-{{--                    <div class="testomonial_section">--}}
-{{--                        <div class="full center">--}}
-{{--                        </div>--}}
-{{--                        <div class="full testimonial_cont text_align_center cross_layout">--}}
-{{--                            <div class="cross_inner">--}}
-{{--                                <h3>Due markes<br><strong class="ornage_color">Rental</strong></h3>--}}
-{{--                                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit ess</i>--}}
-{{--                                </p>--}}
-{{--                            </div>--}}
-{{--                        </div>--}}
-{{--                    </div>--}}
-
-{{--                </div>--}}
-
-{{--                <div class="carousel-item">--}}
-
-{{--                    <div class="testomonial_section">--}}
-{{--                        <div class="full center">--}}
-{{--                        </div>--}}
-{{--                        <div class="full testimonial_cont text_align_center cross_layout">--}}
-{{--                            <div class="cross_inner">--}}
-{{--                                <h3>Due markes<br><strong class="ornage_color">Rental</strong></h3>--}}
-{{--                                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit ess</i>--}}
-{{--                                </p>--}}
-{{--                            </div>--}}
-{{--                        </div>--}}
-{{--                    </div>--}}
-{{--                </div>--}}
-
-{{--            </div>--}}
-{{--        </div>--}}
-{{--    </div>--}}
-{{--</div>--}}
-{{--<div class="clients">--}}
-{{--    <div class="container">--}}
-{{--        <div class="row">--}}
-{{--            <div class="col-md-12">--}}
-{{--                <div class="titlepage">--}}
-{{--                    <h2>Що думають наші клієнти</h2>--}}
-{{--                </div>--}}
-{{--            </div>--}}
-{{--        </div>--}}
-{{--    </div>--}}
-{{--</div>--}}
-{{--<div class="clients_red">--}}
-{{--    <div class="container">--}}
-{{--        <div id="testimonial_slider" class="carousel slide" data-ride="carousel">--}}
-{{--            <!-- Indicators -->--}}
-{{--            <ul class="carousel-indicators">--}}
-{{--                <li data-target="#testimonial_slider" data-slide-to="0" class=""></li>--}}
-{{--                <li data-target="#testimonial_slider" data-slide-to="1" class="active"></li>--}}
-{{--                <li data-target="#testimonial_slider" data-slide-to="2" class=""></li>--}}
-{{--            </ul>--}}
-{{--            <!-- The slideshow -->--}}
-{{--            <div class="carousel-inner">--}}
-{{--                <div class="carousel-item">--}}
-{{--                    <div class="testomonial_section">--}}
-{{--                        <div class="full center">--}}
-{{--                        </div>--}}
-{{--                        <div class="full testimonial_cont text_align_center cross_layout">--}}
-{{--                            <div class="cross_inner">--}}
-{{--                                <h3>Due markes<br><strong class="ornage_color">Rental</strong></h3>--}}
-{{--                                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit ess</i>--}}
-{{--                                </p>--}}
-{{--                            </div>--}}
-{{--                        </div>--}}
-{{--                    </div>--}}
-{{--                </div>--}}
-
-{{--                <div class="carousel-item active">--}}
-
-{{--                    <div class="testomonial_section">--}}
-{{--                        <div class="full center">--}}
-{{--                        </div>--}}
-{{--                        <div class="full testimonial_cont text_align_center cross_layout">--}}
-{{--                            <div class="cross_inner">--}}
-{{--                                <h3>Due markes<br><strong class="ornage_color">Rental</strong></h3>--}}
-{{--                                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit ess</i>--}}
-{{--                                </p>--}}
-{{--                            </div>--}}
-{{--                        </div>--}}
-{{--                    </div>--}}
-
-{{--                </div>--}}
-
-{{--                <div class="carousel-item">--}}
-
-{{--                    <div class="testomonial_section">--}}
-{{--                        <div class="full center">--}}
-{{--                        </div>--}}
-{{--                        <div class="full testimonial_cont text_align_center cross_layout">--}}
-{{--                            <div class="cross_inner">--}}
-{{--                                <h3>Due markes<br><strong class="ornage_color">Rental</strong></h3>--}}
-{{--                                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit ess</i>--}}
-{{--                                </p>--}}
-{{--                            </div>--}}
-{{--                        </div>--}}
-{{--                    </div>--}}
-{{--                </div>--}}
-
-{{--            </div>--}}
-
-{{--        </div>--}}
-
-{{--    </div>--}}
-{{--</div>--}}

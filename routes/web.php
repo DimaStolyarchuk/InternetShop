@@ -13,7 +13,7 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/', 'PageController@home')->name('home');
+Route::get('/', 'PageController@home')->name('/');
 Route::get('/about', 'PageController@about')->name('about');
 Route::get('/brand', 'PageController@brand')->name('brand');
 Route::get('/basket/', 'PageController@basket')->name('basket');
@@ -23,6 +23,8 @@ Route::get('/entry', 'PageController@entry')->name('entry');
 Route::get('/action', 'PageController@action')->name('action');
 Route::get('/second_action', 'PageController@second_action')->name('second_action');
 Route::get('/category/{id}', 'PageController@category')->name('category');
+Route::get('/custom', 'PageController@custom')->name('custom');
+Route::get('/thanks', 'PageController@thanks')->name('thanks');
 
 
 
@@ -70,7 +72,6 @@ Route::get('/category_delete/{id}', 'Admin\CategoryController@delete_category')-
 
 Route::post('/save_contact', 'Admin\ContactController@saveContactsMail')->name('save_contact');
 
-
 Route::post('/add_to_basket', 'BasketController@addToBasket')->name('addToBasket');
 
 Route::get('/admin_comment', 'Admin\CommentsController@comment')->name('admin_comment');
@@ -78,6 +79,9 @@ Route::get('/comment_form', 'Admin\CommentsController@comment_form')->name('comm
 Route::post('/save_comment', 'Admin\CommentsController@saveСomment')->name('save_comment');
 Route::get('/comment_edit/{id}', 'Admin\CommentsController@edit_comment')->name('edit_comment');
 Route::get('/comment_delete/{id}', 'Admin\CommentsController@delete_comment')->name('delete_comment');
+
+Route::post('/save_custom', 'Admin\CustomController@saveCustom')->name('save_custom');
+
 
 
 

@@ -35,15 +35,24 @@
                     <div class="about_box">
                         <h2>{{ $role->product }}<h2>
                         <h1>{{ $role->price }}</h1>
-
                     </div>
+
                 </div>
             </div>
         </div>
     </div>
-    </div>
 @endforeach
-
+<div class="brand_color">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-12">
+                <div class="titlepage">
+                    <h2><a class="read-more" href="{{ route('custom') }}">Оформити замовлення</a></h2>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
 
 @include('second_header')
 

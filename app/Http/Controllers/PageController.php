@@ -9,6 +9,7 @@ use App\Brand;
 use App\Category;
 use App\Comments;
 use App\Contact;
+use App\Customs;
 use App\Entry;
 use App\Home;
 use App\Product;
@@ -95,10 +96,14 @@ class PageController extends Controller
         return back();
     }
 
+    public function custom()
+    {
+        $dataCustoms = Customs::get();
+        return view('custom',compact('dataCustoms'));
+    }
 
-
-
-
-
-
+    public function thanks()
+    {
+        return view('thanks');
+    }
 }
