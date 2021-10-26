@@ -28,26 +28,8 @@
     <div class="container">
         <div class="row">
             <div class="col-md-12">
-{{--                <form class="main_form" method="post" action="{{ route('save_registration') }}">--}}
-{{--                    {{ csrf_field() }}--}}
-{{--                    <div class="row">--}}
-{{--                        <div class="col-xl-6 col-lg-6 col-md-6 col-sm-6">--}}
-{{--                            <input class="form-control" placeholder="Електрона адреса" type="text" name="email">--}}
-{{--                        </div>--}}
-{{--                        <div class="col-xl-6 col-lg-6 col-md-6 col-sm-6">--}}
-{{--                            <input class="form-control" placeholder="Пароль" type="text" name="password">--}}
-{{--                        </div>--}}
-{{--                        <div class=" col-md-12">--}}
-{{--                            <input class="form-control" placeholder="Повторити пароль" type="text" name="password">--}}
-{{--                        </div>--}}
-{{--                        <div class=" col-md-12">--}}
-{{--                            <button class="send">Відправити</button>--}}
-{{--                        </div>--}}
-{{--                    </div>--}}
-{{--                </form>--}}
                 <form method="POST" action="{{ route('register') }}">
                     @csrf
-
                     <div class="form-group row">
                         <label for="name" class="col-md-4 col-form-label text-md-right">{{ __("Ім'я") }}</label>
 

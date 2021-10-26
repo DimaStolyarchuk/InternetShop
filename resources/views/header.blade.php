@@ -49,9 +49,6 @@
                                             </div>
                                         </li>
                                     @endguest
-{{--                                    <li class="last">--}}
-{{--                                        <a href="#"><img src="images/search_icon.png" alt="icon" /></a>--}}
-{{--                                    </li>--}}
                                 </ul>
                             </nav>
                         </div>
